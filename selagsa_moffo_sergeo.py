@@ -1,5 +1,6 @@
 # import libraries
 import pandas as pd
+import streamlit as st
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -67,6 +68,12 @@ def evaluate_model(model, X_test, y_test):
 # Function to deploy the model (bonus) (10 pts)
 def deploy_model(model, X_test):
     # Deploy the best model using Streamlit or Flask (bonus)
+    predictions = model.predict(X_test)
+    deployment_results = pd.DataFrame({'Feature 1': X_test[:, 0], 'Feature 2': X_test[:, 1], 'Prediction': predictions})
+
+    # results using Streamlit
+    st.title('Model Deployment')
+    st.dataframe(deployment_results)
     pass
 
 # Main function

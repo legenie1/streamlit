@@ -1,4 +1,3 @@
-pandas==
-streamlit==
-sklearn==
-joblit==
+pandas==2.03
+streamlit==1.29.0
+sklearn==0.20
